@@ -1,17 +1,9 @@
 package praktikum.testing;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.junit.Before;
 import org.junit.Test;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
 
