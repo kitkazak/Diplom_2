@@ -24,4 +24,16 @@ public class Orders {
                     .when().post(Paths.ORDERS);
         }
     }
+
+    public static Response getUserOrders(String token) {
+        if (Objects.equals(token, "")) {
+            return RestAssured
+                    .when().get(Paths.ORDERS);
+        } else {
+            return RestAssured
+                    .given()
+                    .header("Authorization", token)
+                    .when().get(Paths.ORDERS);
+        }
+    }
 }
