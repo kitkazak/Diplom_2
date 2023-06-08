@@ -5,4 +5,5 @@ public class Paths {
     public static final String AUTH_REGISTER = BASE_URI + "/auth/register";
     public static final String AUTH_USER = BASE_URI + "/auth/user";
     public static final String AUTH_LOGIN = BASE_URI + "/auth/login";
+    public static final String ORDERS = BASE_URI + "/orders";
 }
