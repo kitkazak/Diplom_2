@@ -13,4 +13,19 @@ public class Auth {
                 .body(body.toJSONString())
                 .when().post(Paths.AUTH_REGISTER);
     }
+
+    public static Response login(JSONObject body) {
+        return RestAssured
+                .given()
+                .header("Content-Type", "application/json")
+                .body(body.toJSONString())
+                .when().post(Paths.AUTH_LOGIN);
+    }
+
+    public static Response delete(String token) {
+        return RestAssured
+                .given()
+                .header("Authorization", token)
+                .when().delete(Paths.AUTH_USER);
+    }
 }

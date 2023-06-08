@@ -33,6 +33,19 @@ public class AuthRegisterTests {
 
         Response res = Auth.register(new JSONObject(authRegisterBody));
         res.then().statusCode(200);
+
+//        // Login user
+//        HashMap<String, Object> loginBody = new HashMap<>();
+//        loginBody.put("name", "kitkazak_name" + uuid.toString());
+//        loginBody.put("password", "kitkazak_password" + uuid.toString());
+//        loginBody.put("email", "kitkazak_email" + uuid.toString() + "@yandex.ru");
+//        Response loginRes = Auth.login(new JSONObject(loginBody));
+//        loginRes.then().statusCode(200);
+
+        // Delete user
+        Response deleteRes = Auth.delete(res.jsonPath().get("accessToken"));
+        deleteRes.then().statusCode(202);
+
     }
 
     @Test
@@ -50,10 +63,13 @@ public class AuthRegisterTests {
 
         Response secondRes = Auth.register(new JSONObject(authRegisterBody));
         secondRes.then().statusCode(403).and().body("message", equalTo("User already exists"));
+
+        Response deleteRes = Auth.delete(res.jsonPath().get("accessToken"));
+        deleteRes.then().statusCode(202);
     }
 
     @Test
-    @DisplayName("создать пользователя и не заполнить одно из обязательных полей")
+    @DisplayName("Создать пользователя и не заполнить одно из обязательных полей")
     public void authRegisterNotAllRequiredFields() {
         UUID uuid = UUID.randomUUID();
 
