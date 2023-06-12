@@ -25,8 +25,6 @@ public class CreateOrderTests {
     HashMap<String, Object> createOrderBody;
     JSONArray ings;
 
-    // В before проверяется создание уникального пользователя
-    // Поэтому тестов стало на один меньше
     @Before
     public void setUp() {
         uuid = UUID.randomUUID();
