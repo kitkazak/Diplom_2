@@ -1,6 +1,5 @@
 package praktikum.testing;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
